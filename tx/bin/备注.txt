@@ -1,0 +1,30 @@
+�пӣ���
+
+targetProject="F:\MyProject\resources"   
+�����Զ����� �ļ���
+���ֶ������ļ���
+
+�ӵ���� ����ʾ�� ɶ������ʾ Ҳ������
+
+
+
+���Ż��п� 
+SQL error codes for 'MySQL' found
+that corresponds to your MySQL server version for the right syntax to use near 'MYSQL' at line 1
+
+<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"></property>
+		<property name="basePackage" value="com.test.manage.mapper" /> 
+		<property name="properties">
+			<value>
+				mappers=tk.mybatis.mapper.common.Mapper
+				IDENTITY=MYSQL
+				ORDER=AFTER
+			</value>
+		</property> 
+	</bean> 
+
+
+
+IDENTITY=MYSQL �ӵ�� ǧ��ü����û�пո�
+
