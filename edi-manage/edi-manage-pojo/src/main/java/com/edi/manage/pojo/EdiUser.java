@@ -12,7 +12,7 @@ import javax.persistence.Transient;
 
 /**
 * <p>Title: EdiUser </p>
-* <p>@Description: TODO </p>
+* <p>@Description:  </p>
 * <p>Company:  </p>
 * @author 李文
 * @date   2016年7月8日 下午1:51:56 
