@@ -1,9 +1,18 @@
 package com.edi.commcn.edi.bean.eid;
 
-public class receiver
+import java.io.Serializable;
+
+public class receiver implements Serializable
 {
+	private Long id;// id
+
 	/**
-	 * 详细地址(丌要包含省市区\县) 
+	 * 用户ID
+	 */
+	private Long uid;// 用户ID
+
+	/**
+	 * 详细地址(含省市区\县) 
 	 */
 	public String address;
 
@@ -41,6 +50,38 @@ public class receiver
 	 * 寄件或收件省（北京市、湖北省）
 	 */
 	public String prov;
+
+	/**
+	 * @return the id
+	 */
+	public Long getId()
+	{
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id)
+	{
+		this.id = id;
+	}
+
+	/**
+	 * @return the 用户ID
+	 */
+	public Long getUid()
+	{
+		return uid;
+	}
+
+	/**
+	 * @param 用户ID the uid to set
+	 */
+	public void setUid(Long uid)
+	{
+		this.uid = uid;
+	}
 
 	/**  
 	 * 获取详细地址(丌要包含省市区县)  
