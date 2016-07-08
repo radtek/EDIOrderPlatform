@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edi.manage.mapper.ItemMapper" >
+  <resultMap id="BaseResultMap" type="com.edi.manage.pojo.Item" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="uid" property="uid" jdbcType="BIGINT" />
+    <result column="itemname" property="itemname" jdbcType="VARCHAR" />
+    <result column="itemnumber" property="itemnumber" jdbcType="VARCHAR" />
+    <result column="itemvalue" property="itemvalue" jdbcType="VARCHAR" />
+    <result column="itemvolume" property="itemvolume" jdbcType="VARCHAR" />
+    <result column="itemweight" property="itemweight" jdbcType="VARCHAR" />
+  </resultMap>
+   
+  <select id="querybyuid" resultType="com.edi.manage.pojo.Item" parameterType="String" >
+      select  * from  Item where uid = #{id} 
+  </select>
+  
+  
+</mapper>
