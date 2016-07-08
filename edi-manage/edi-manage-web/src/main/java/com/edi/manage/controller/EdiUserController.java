@@ -39,6 +39,7 @@ public class EdiUserController extends BaseController<EdiUserService, EdiUser>
 		user.setVerifyseed("1");
 		user.setXid(11);
 		user.setIp("100000");
+
 		return ResponseEntity.ok(user);
 	}
 

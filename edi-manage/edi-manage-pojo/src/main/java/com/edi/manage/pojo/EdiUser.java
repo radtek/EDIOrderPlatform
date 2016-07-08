@@ -1,11 +1,22 @@
 package com.edi.manage.pojo;
 
+import java.util.Date;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
+/**
+* <p>Title: EdiUser </p>
+* <p>@Description: TODO </p>
+* <p>Company:  </p>
+* @author 李文
+* @date   2016年7月8日 下午1:51:56 
+*/
 @Table(name = "edi_user")
 public class EdiUser extends BasePojo
 {
@@ -17,6 +28,28 @@ public class EdiUser extends BasePojo
 	private Long id;
 
 	private String name;
+
+	/**
+	 * 下单信息
+	 */
+	@Transient
+	private List<Requestorder> requestorder;
+
+	/**
+	 * @return the 下单信息
+	 */
+	public List<Requestorder> getRequestorder()
+	{
+		return requestorder;
+	}
+
+	/**
+	 * @param 下单信息 the requestorder to set
+	 */
+	public void setRequestorder(List<Requestorder> requestorder)
+	{
+		this.requestorder = requestorder;
+	}
 
 	/**
 	 * 白名单
@@ -57,6 +90,18 @@ public class EdiUser extends BasePojo
 	 */
 	@Column(name = "OrderType")
 	private Integer ordertype;
+
+	/**
+	 * 更新时间
+	 */
+	@Column(name = "UpdateTime")
+	private Date updatetime;
+
+	/**
+	 * 创建时间
+	 */
+	@Column(name = "RecordTime")
+	private Date recordtime;
 
 	/**
 	 * 获取用户名称
@@ -234,4 +279,43 @@ public class EdiUser extends BasePojo
 		this.ordertype = ordertype;
 	}
 
+	/**
+	 * 获取更新时间
+	 *
+	 * @return UpdateTime - 更新时间
+	 */
+	public Date getUpdatetime()
+	{
+		return updatetime;
+	}
+
+	/**
+	 * 设置更新时间
+	 *
+	 * @param updatetime 更新时间
+	 */
+	public void setUpdatetime(Date updatetime)
+	{
+		this.updatetime = updatetime;
+	}
+
+	/**
+	 * 获取创建时间
+	 *
+	 * @return RecordTime - 创建时间
+	 */
+	public Date getRecordtime()
+	{
+		return recordtime;
+	}
+
+	/**
+	 * 设置创建时间
+	 *
+	 * @param recordtime 创建时间
+	 */
+	public void setRecordtime(Date recordtime)
+	{
+		this.recordtime = recordtime;
+	}
 }

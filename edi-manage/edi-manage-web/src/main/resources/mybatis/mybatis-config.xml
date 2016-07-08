@@ -5,16 +5,18 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<settings>
 		<setting name="mapUnderscoreToCamelCase" value="true" />
+		  <setting name="lazyLoadingEnabled" value="true" />
+		<setting name="aggressiveLazyLoading" value="false" />  
 	</settings>
- 
+
 
 	<!-- 通用mapper 插件 -->
-	<plugins> 
+	<plugins>
 		<!-- 通用分页拦截器 -->
 		<plugin interceptor="com.github.pagehelper.PageHelper">
 			<property name="dialect" value="mysql" />
 			<property name="rowBoundsWithCount" value="true" />
-		</plugin>  
+		</plugin>
 	</plugins>
 
 
