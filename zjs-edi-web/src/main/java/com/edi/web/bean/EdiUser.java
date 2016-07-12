@@ -1,14 +1,37 @@
 package com.edi.web.bean;
 
+import java.util.Date;
+import java.util.List;
+
 public class EdiUser extends BasePojo
 {
 	/**
 	 * 用户名称
 	 */
-
 	private Long id;
 
 	private String name;
+
+	/**
+	 * 下单信息s
+	 */
+	private List<Requestorder> requestorders;
+
+	/**
+	 * @return the 下单信息s
+	 */
+	public List<Requestorder> getRequestorders()
+	{
+		return requestorders;
+	}
+
+	/**
+	 * @param 下单信息s the requestorders to set
+	 */
+	public void setRequestorders(List<Requestorder> requestorders)
+	{
+		this.requestorders = requestorders;
+	}
 
 	/**
 	 * 白名单
@@ -23,32 +46,37 @@ public class EdiUser extends BasePojo
 	/**
 	 * 数据类型 json/xml
 	 */
-
 	private String datatype;
 
 	/**
 	 * EID 客户标识
 	 */
-
 	private String clientflag;
 
 	/**
 	 * EID 客户秘钥
 	 */
-
 	private String verifyseed;
 
 	/**
 	 * 分仓标识
 	 */
-
 	private String dataflag;
 
 	/**
 	 * 用户类型  0标准 1定制
 	 */
-
 	private Integer ordertype;
+
+	/**
+	 * 更新时间
+	 */
+	private Date updatetime;
+
+	/**
+	 * 创建时间
+	 */
+	private Date recordtime;
 
 	/**
 	 * 获取用户名称
@@ -226,4 +254,43 @@ public class EdiUser extends BasePojo
 		this.ordertype = ordertype;
 	}
 
+	/**
+	 * 获取更新时间
+	 *
+	 * @return UpdateTime - 更新时间
+	 */
+	public Date getUpdatetime()
+	{
+		return updatetime;
+	}
+
+	/**
+	 * 设置更新时间
+	 *
+	 * @param updatetime 更新时间
+	 */
+	public void setUpdatetime(Date updatetime)
+	{
+		this.updatetime = updatetime;
+	}
+
+	/**
+	 * 获取创建时间
+	 *
+	 * @return RecordTime - 创建时间
+	 */
+	public Date getRecordtime()
+	{
+		return recordtime;
+	}
+
+	/**
+	 * 设置创建时间
+	 *
+	 * @param recordtime 创建时间
+	 */
+	public void setRecordtime(Date recordtime)
+	{
+		this.recordtime = recordtime;
+	}
 }

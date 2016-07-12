@@ -19,14 +19,13 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-		<dependency>
-
+		<dependency> 
 			<groupId>com.edi.commcn</groupId>
 			<artifactId>edi-commcn</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			
+			<version>0.0.1-SNAPSHOT</version> 
 		</dependency>
 		
+		 
 		
 		
 		<dependency>

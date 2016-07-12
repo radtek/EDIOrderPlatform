@@ -167,4 +167,16 @@ public abstract class BaseService<T>
 		return aipService.doDelete(url + "/" + this.getFunction() + "?id=" + id);
 	}
 
+	/**
+	 * 保存
+	 * 
+	 * @param t
+	 * @throws Exception 
+	 */
+	public HttpResult saveSelective(Map<String, String[]> map) throws Exception
+	{
+
+		return aipService.doPostRequest(url + "/" + this.getFunction(), map);
+	}
+
 }
