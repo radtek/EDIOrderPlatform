@@ -127,7 +127,6 @@ public class ApiService
 		while (it.hasNext())
 		{
 			Entry<String, String[]> entry = it.next();
-			System.out.println("KEY:" + entry.getKey());
 			mapa.put(entry.getKey(), entry.getValue()[0]);
 		}
 		return doPost(url, mapa);
