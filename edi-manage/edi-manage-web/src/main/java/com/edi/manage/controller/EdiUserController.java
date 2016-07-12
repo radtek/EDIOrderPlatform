@@ -3,6 +3,7 @@ package com.edi.manage.controller;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,18 +48,24 @@ public class EdiUserController extends BaseController<EdiUserService, EdiUser>
 		return ResponseEntity.ok(user);
 	}
 
+	/**
+	 * 保存 并保存关联项
+	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<EdiUser> saveContentCategory(EdiUser M)
 	{
 		try
 		{
-			ediUserService.save(M);
+			ediUserService.saveEdiUsers(M);
+			return ResponseEntity.ok(null);
 		}
 		catch (Exception e)
 		{
 			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+
 		}
-		return ResponseEntity.ok(null);
+
 	}
 
 }

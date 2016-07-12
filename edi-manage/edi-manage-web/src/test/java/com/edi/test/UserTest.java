@@ -33,7 +33,7 @@ public class UserTest
 	{
 		for (EdiUser u : edi.querByList())
 		{
-			List<Requestorder> r = u.getRequestorder();
+			List<Requestorder> r = u.getRequestorders();
 
 			if (r == null)
 			{

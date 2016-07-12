@@ -33,22 +33,22 @@ public class EdiUser extends BasePojo
 	 * 下单信息
 	 */
 	@Transient
-	private List<Requestorder> requestorder;
+	private List<Requestorder> requestorders;
 
 	/**
 	 * @return the 下单信息
 	 */
-	public List<Requestorder> getRequestorder()
+	public List<Requestorder> getRequestorders()
 	{
-		return requestorder;
+		return requestorders;
 	}
 
 	/**
-	 * @param 下单信息 the requestorder to set
+	 * @param 下单信息 the requestorders to set
 	 */
-	public void setRequestorder(List<Requestorder> requestorder)
+	public void setRequestorders(List<Requestorder> requestorders)
 	{
-		this.requestorder = requestorder;
+		this.requestorders = requestorders;
 	}
 
 	/**
@@ -317,20 +317,6 @@ public class EdiUser extends BasePojo
 	public void setRecordtime(Date recordtime)
 	{
 		this.recordtime = recordtime;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString()
-	{
-		return "[id=" + id + ", name=" + name + ", requestorder=" + requestorder + ", ip=" + ip
-				+ ", xid=" + xid + ", datatype=" + datatype + ", clientflag=" + clientflag
-				+ ", verifyseed=" + verifyseed + ", dataflag=" + dataflag + ", ordertype="
-				+ ordertype + ", updatetime=" + updatetime + ", recordtime=" + recordtime + "]";
 	}
 
 }
