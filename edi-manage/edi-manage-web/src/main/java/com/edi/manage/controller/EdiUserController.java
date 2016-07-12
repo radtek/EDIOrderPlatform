@@ -2,6 +2,7 @@ package com.edi.manage.controller;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,9 @@ import com.edi.manage.service.EdiUserService;
 @RequestMapping("eiduser")
 public class EdiUserController extends BaseController<EdiUserService, EdiUser>
 {
+
+	@Autowired
+	private EdiUserService ediUserService;
 
 	// 通用方法 满足不了需求的时候 可直接从写 改方法
 
@@ -41,6 +45,20 @@ public class EdiUserController extends BaseController<EdiUserService, EdiUser>
 		user.setIp("100000");
 
 		return ResponseEntity.ok(user);
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	public ResponseEntity<EdiUser> saveContentCategory(EdiUser M)
+	{
+		try
+		{
+			ediUserService.save(M);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return ResponseEntity.ok(null);
 	}
 
 }

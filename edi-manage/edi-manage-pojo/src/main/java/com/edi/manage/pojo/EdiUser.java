@@ -318,4 +318,19 @@ public class EdiUser extends BasePojo
 	{
 		this.recordtime = recordtime;
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString()
+	{
+		return "[id=" + id + ", name=" + name + ", requestorder=" + requestorder + ", ip=" + ip
+				+ ", xid=" + xid + ", datatype=" + datatype + ", clientflag=" + clientflag
+				+ ", verifyseed=" + verifyseed + ", dataflag=" + dataflag + ", ordertype="
+				+ ordertype + ", updatetime=" + updatetime + ", recordtime=" + recordtime + "]";
+	}
+
 }
