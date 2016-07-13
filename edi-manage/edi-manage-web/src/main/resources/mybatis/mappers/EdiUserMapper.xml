@@ -13,7 +13,7 @@
 		<result column="OrderType" property="ordertype" jdbcType="INTEGER" />
 		<result column="UpdateTime" property="updatetime" jdbcType="TIMESTAMP" />
 		<result column="RecordTime" property="recordtime" jdbcType="TIMESTAMP" />
-		<collection property="requestorder" ofType="com.edi.manage.pojo.Requestorder"
+		<collection property="requestorders" ofType="com.edi.manage.pojo.Requestorder"
 			javaType="Arraylist" column="id"
 			select="com.edi.manage.mapper.RequestorderMapper.queryById"></collection>
 	</resultMap>

@@ -1,9 +1,17 @@
 package com.edi.manage.pojo;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+* <p>Title: Item </p>
+* <p>@Description: 商品信息类 </p>
+* <p>Company:  </p>
+* @author 李文
+* @date   2016年7月13日 下午3:08:19 
+*/
 public class Item extends BasePojo
 {
 	/**
@@ -21,32 +29,35 @@ public class Item extends BasePojo
 	/**
 	 * 商品总品名：品名*数量|…|品名*数量 
 	 */
-	private String itemname;
+	@Column(name = "itemName")
+	private String itemName;
 
 	/**
 	 * 商品数量
 	 */
-	private String itemnumber;
+	@Column(name = "itemNumber")
+	private String itemNumber;
 
 	/**
 	 * 商品价值
 	 */
-	private String itemvalue;
+	@Column(name = "itemValue")
+	private String itemValue;
 
 	/**
 	 * 商品体积
 	 */
-	private String itemvolume;
+	@Column(name = "itemVolume")
+	private String itemVolume;
 
 	/**
 	 * 总重量（KG 精度.00） 
 	 */
-	private String itemweight;
+	@Column(name = "itemWeight")
+	private String itemWeight;
 
 	/**
-	 * 获取id
-	 *
-	 * @return id - id
+	 * @return the id
 	 */
 	public Long getId()
 	{
@@ -54,9 +65,7 @@ public class Item extends BasePojo
 	}
 
 	/**
-	 * 设置id
-	 *
-	 * @param id id
+	 * @param id the id to set
 	 */
 	public void setId(Long id)
 	{
@@ -64,9 +73,7 @@ public class Item extends BasePojo
 	}
 
 	/**
-	 * 获取用户id
-	 *
-	 * @return uid - 用户id
+	 * @return the 用户id
 	 */
 	public Long getUid()
 	{
@@ -74,9 +81,7 @@ public class Item extends BasePojo
 	}
 
 	/**
-	 * 设置用户id
-	 *
-	 * @param uid 用户id
+	 * @param 用户id the uid to set
 	 */
 	public void setUid(Long uid)
 	{
@@ -84,102 +89,83 @@ public class Item extends BasePojo
 	}
 
 	/**
-	 * 获取商品总品名：品名*数量|…|品名*数量 
-	 *
-	 * @return itemname - 商品总品名：品名*数量|…|品名*数量 
+	 * @return the 商品总品名：品名数量|…|品名数量
 	 */
-	public String getItemname()
+	public String getItemName()
 	{
-		return itemname;
+		return itemName;
 	}
 
 	/**
-	 * 设置商品总品名：品名*数量|…|品名*数量 
-	 *
-	 * @param itemname 商品总品名：品名*数量|…|品名*数量 
+	 * @param 商品总品名：品名数量|…|品名数量 the itemName to set
 	 */
-	public void setItemname(String itemname)
+	public void setItemName(String itemName)
 	{
-		this.itemname = itemname == null ? null : itemname.trim();
+		this.itemName = itemName;
 	}
 
 	/**
-	 * 获取商品数量
-	 *
-	 * @return itemnumber - 商品数量
+	 * @return the 商品数量
 	 */
-	public String getItemnumber()
+	public String getItemNumber()
 	{
-		return itemnumber;
+		return itemNumber;
 	}
 
 	/**
-	 * 设置商品数量
-	 *
-	 * @param itemnumber 商品数量
+	 * @param 商品数量 the itemNumber to set
 	 */
-	public void setItemnumber(String itemnumber)
+	public void setItemNumber(String itemNumber)
 	{
-		this.itemnumber = itemnumber == null ? null : itemnumber.trim();
+		this.itemNumber = itemNumber;
 	}
 
 	/**
-	 * 获取商品价值
-	 *
-	 * @return itemvalue - 商品价值
+	 * @return the 商品价值
 	 */
-	public String getItemvalue()
+	public String getItemValue()
 	{
-		return itemvalue;
+		return itemValue;
 	}
 
 	/**
-	 * 设置商品价值
-	 *
-	 * @param itemvalue 商品价值
+	 * @param 商品价值 the itemValue to set
 	 */
-	public void setItemvalue(String itemvalue)
+	public void setItemValue(String itemValue)
 	{
-		this.itemvalue = itemvalue == null ? null : itemvalue.trim();
+		this.itemValue = itemValue;
 	}
 
 	/**
-	 * 获取商品体积
-	 *
-	 * @return itemvolume - 商品体积
+	 * @return the 商品体积
 	 */
-	public String getItemvolume()
+	public String getItemVolume()
 	{
-		return itemvolume;
+		return itemVolume;
 	}
 
 	/**
-	 * 设置商品体积
-	 *
-	 * @param itemvolume 商品体积
+	 * @param 商品体积 the itemVolume to set
 	 */
-	public void setItemvolume(String itemvolume)
+	public void setItemVolume(String itemVolume)
 	{
-		this.itemvolume = itemvolume == null ? null : itemvolume.trim();
+		this.itemVolume = itemVolume;
 	}
 
 	/**
-	 * 获取总重量（KG 精度.00） 
-	 *
-	 * @return itemweight - 总重量（KG 精度.00） 
+	 * @return the 总重量（KG精度.00）
 	 */
-	public String getItemweight()
+	public String getItemWeight()
 	{
-		return itemweight;
+		return itemWeight;
 	}
 
 	/**
-	 * 设置总重量（KG 精度.00） 
-	 *
-	 * @param itemweight 总重量（KG 精度.00） 
+	 * @param 总重量（KG精度.00） the itemWeight to set
 	 */
-	public void setItemweight(String itemweight)
+	public void setItemWeight(String itemWeight)
 	{
-		this.itemweight = itemweight == null ? null : itemweight.trim();
+		this.itemWeight = itemWeight;
 	}
+
 }

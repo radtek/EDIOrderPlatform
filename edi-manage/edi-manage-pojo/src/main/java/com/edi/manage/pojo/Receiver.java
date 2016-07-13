@@ -1,9 +1,17 @@
 package com.edi.manage.pojo;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+* <p>Title: Receiver </p>
+* <p>@Description: 收货人地址类 </p>
+* <p>Company:  </p>
+* @author 李文
+* @date   2016年7月13日 下午3:08:00 
+*/
 public class Receiver extends BasePojo
 {
 	/**
@@ -46,7 +54,8 @@ public class Receiver extends BasePojo
 	/**
 	 * 邮编
 	 */
-	private String postcode;
+	@Column(name = "postCode")
+	private String postCode;
 
 	/**
 	 * 寄件或收件省（北京市、湖北省）
@@ -59,9 +68,7 @@ public class Receiver extends BasePojo
 	private Long uid;
 
 	/**
-	 * 获取id
-	 *
-	 * @return id - id
+	 * @return the id
 	 */
 	public Long getId()
 	{
@@ -69,9 +76,7 @@ public class Receiver extends BasePojo
 	}
 
 	/**
-	 * 设置id
-	 *
-	 * @param id id
+	 * @param id the id to set
 	 */
 	public void setId(Long id)
 	{
@@ -79,9 +84,7 @@ public class Receiver extends BasePojo
 	}
 
 	/**
-	 * 获取详细地址(含省市区县) 
-	 *
-	 * @return address - 详细地址(含省市区县) 
+	 * @return the 详细地址(含省市区县)
 	 */
 	public String getAddress()
 	{
@@ -89,19 +92,15 @@ public class Receiver extends BasePojo
 	}
 
 	/**
-	 * 设置详细地址(含省市区县) 
-	 *
-	 * @param address 详细地址(含省市区县) 
+	 * @param 详细地址(含省市区县) the address to set
 	 */
 	public void setAddress(String address)
 	{
-		this.address = address == null ? null : address.trim();
+		this.address = address;
 	}
 
 	/**
-	 * 获取寄件或收件市（北京市、宜昌市）
-	 *
-	 * @return city - 寄件或收件市（北京市、宜昌市）
+	 * @return the 寄件或收件市（北京市、宜昌市）
 	 */
 	public String getCity()
 	{
@@ -109,19 +108,15 @@ public class Receiver extends BasePojo
 	}
 
 	/**
-	 * 设置寄件或收件市（北京市、宜昌市）
-	 *
-	 * @param city 寄件或收件市（北京市、宜昌市）
+	 * @param 寄件或收件市（北京市、宜昌市） the city to set
 	 */
 	public void setCity(String city)
 	{
-		this.city = city == null ? null : city.trim();
+		this.city = city;
 	}
 
 	/**
-	 * 获取寄件或收件区县(如东城区、延庆县)
-	 *
-	 * @return district - 寄件或收件区县(如东城区、延庆县)
+	 * @return the 寄件或收件区县(如东城区、延庆县)
 	 */
 	public String getDistrict()
 	{
@@ -129,19 +124,15 @@ public class Receiver extends BasePojo
 	}
 
 	/**
-	 * 设置寄件或收件区县(如东城区、延庆县)
-	 *
-	 * @param district 寄件或收件区县(如东城区、延庆县)
+	 * @param 寄件或收件区县(如东城区、延庆县) the district to set
 	 */
 	public void setDistrict(String district)
 	{
-		this.district = district == null ? null : district.trim();
+		this.district = district;
 	}
 
 	/**
-	 * 获取移劢电话
-	 *
-	 * @return mobile - 移劢电话
+	 * @return the 移劢电话
 	 */
 	public String getMobile()
 	{
@@ -149,19 +140,15 @@ public class Receiver extends BasePojo
 	}
 
 	/**
-	 * 设置移劢电话
-	 *
-	 * @param mobile 移劢电话
+	 * @param 移劢电话 the mobile to set
 	 */
 	public void setMobile(String mobile)
 	{
-		this.mobile = mobile == null ? null : mobile.trim();
+		this.mobile = mobile;
 	}
 
 	/**
-	 * 获取寄件人或收件人姓名
-	 *
-	 * @return name - 寄件人或收件人姓名
+	 * @return the 寄件人或收件人姓名
 	 */
 	public String getName()
 	{
@@ -169,19 +156,15 @@ public class Receiver extends BasePojo
 	}
 
 	/**
-	 * 设置寄件人或收件人姓名
-	 *
-	 * @param name 寄件人或收件人姓名
+	 * @param 寄件人或收件人姓名 the name to set
 	 */
 	public void setName(String name)
 	{
-		this.name = name == null ? null : name.trim();
+		this.name = name;
 	}
 
 	/**
-	 * 获取固定电话
-	 *
-	 * @return phone - 固定电话
+	 * @return the 固定电话
 	 */
 	public String getPhone()
 	{
@@ -189,39 +172,31 @@ public class Receiver extends BasePojo
 	}
 
 	/**
-	 * 设置固定电话
-	 *
-	 * @param phone 固定电话
+	 * @param 固定电话 the phone to set
 	 */
 	public void setPhone(String phone)
 	{
-		this.phone = phone == null ? null : phone.trim();
+		this.phone = phone;
 	}
 
 	/**
-	 * 获取邮编
-	 *
-	 * @return postcode - 邮编
+	 * @return the 邮编
 	 */
-	public String getPostcode()
+	public String getPostCode()
 	{
-		return postcode;
+		return postCode;
 	}
 
 	/**
-	 * 设置邮编
-	 *
-	 * @param postcode 邮编
+	 * @param 邮编 the postCode to set
 	 */
-	public void setPostcode(String postcode)
+	public void setPostCode(String postCode)
 	{
-		this.postcode = postcode == null ? null : postcode.trim();
+		this.postCode = postCode;
 	}
 
 	/**
-	 * 获取寄件或收件省（北京市、湖北省）
-	 *
-	 * @return prov - 寄件或收件省（北京市、湖北省）
+	 * @return the 寄件或收件省（北京市、湖北省）
 	 */
 	public String getProv()
 	{
@@ -229,19 +204,15 @@ public class Receiver extends BasePojo
 	}
 
 	/**
-	 * 设置寄件或收件省（北京市、湖北省）
-	 *
-	 * @param prov 寄件或收件省（北京市、湖北省）
+	 * @param 寄件或收件省（北京市、湖北省） the prov to set
 	 */
 	public void setProv(String prov)
 	{
-		this.prov = prov == null ? null : prov.trim();
+		this.prov = prov;
 	}
 
 	/**
-	 * 获取用户ID
-	 *
-	 * @return uid - 用户ID
+	 * @return the 用户ID
 	 */
 	public Long getUid()
 	{
@@ -249,12 +220,11 @@ public class Receiver extends BasePojo
 	}
 
 	/**
-	 * 设置用户ID
-	 *
-	 * @param uid 用户ID
+	 * @param 用户ID the uid to set
 	 */
 	public void setUid(Long uid)
 	{
 		this.uid = uid;
 	}
+
 }

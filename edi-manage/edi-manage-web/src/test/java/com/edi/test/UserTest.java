@@ -12,6 +12,7 @@ import com.edi.manage.pojo.Receiver;
 import com.edi.manage.pojo.Requestorder;
 import com.edi.manage.pojo.Sender;
 import com.edi.manage.service.EdiUserService;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 public class UserTest
 {
@@ -29,10 +30,14 @@ public class UserTest
 	}
 
 	@Test
-	public void Test_ById()
+	public void Test_ById() throws Exception
 	{
+		XmlMapper xmlMapper = new XmlMapper();
 		for (EdiUser u : edi.querByList())
 		{
+
+			String xml = xmlMapper.writeValueAsString(u);
+			System.out.println(xml);
 			List<Requestorder> r = u.getRequestorders();
 
 			if (r == null)

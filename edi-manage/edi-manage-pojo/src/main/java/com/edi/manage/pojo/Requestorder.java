@@ -1,5 +1,6 @@
 package com.edi.manage.pojo;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -7,6 +8,25 @@ import javax.persistence.Transient;
 
 public class Requestorder extends BasePojo
 {
+
+	/**
+	 * 发货人信息
+	 */
+	@Transient
+	private Sender sender;
+
+	/**
+	 * 收件人信息
+	 */
+	@Transient
+	private Receiver receiver;
+
+	/**
+	 * 商品信息
+	 */
+	@Transient
+	private Item item;
+
 	/**
 	 * id
 	 */
@@ -15,10 +35,95 @@ public class Requestorder extends BasePojo
 	private Long id;
 
 	/**
-	 * 发货人信息
+	 * 用户id
 	 */
-	@Transient
-	private Sender sender;
+	private Long uid;
+
+	/**
+	 * 代收金额（代收订单时，金额必须>0）
+	 */
+	@Column(name = "codAmount")
+	private String codAmount;
+
+	/**
+	 * 数据标识(用于分仓发货,C2C 类客户省略) 
+	 */
+	@Column(name = "dataFlag")
+	private String dataFlag;
+
+	/**
+	 * 订单标识
+	 */
+	private String flag;
+
+	/**
+	 * 保险费(暂丌使用)
+	 */
+	@Column(name = "insuranceValue")
+	private String insuranceValue;
+
+	/**
+	 * 商品总品名：品名*数量|…|品名*数量 
+	 */
+	@Column(name = "itemsName")
+	private String itemsName;
+
+	/**
+	 * 商品总数量。根据您的发货单位统计数量
+	 */
+	@Column(name = "itemsNumber")
+	private String itemsNumber;
+
+	/**
+	 * 商品尺寸：长*宽*高*件数,
+	 */
+	@Column(name = "itemsVolume")
+	private String itemsVolume;
+
+	/**
+	 * 总重量（KG 精度.00） 
+	 */
+	@Column(name = "itemsWeight")
+	private String itemsWeight;
+
+	/**
+	 * 客户标识(宅急送提供)
+	 */
+	@Column(name = "logisticProviderID")
+	private String logisticProviderID;
+
+	/**
+	 * 快递单号(宅急送物流单号) 
+	 */
+	@Column(name = "mailNo")
+	private String mailNo;
+
+	/**
+	 * 客户单号（物流订单号）
+	 */
+	@Column(name = "orderNo")
+	private String orderNo;
+
+	/**
+	 * 重要提示
+	 */
+	private String remark;
+
+	/**
+	 * 物流子订单号，多个子订单号逗号隔开
+	 */
+	@Column(name = "subOrderNo")
+	private String subOrderNo;
+
+	/**
+	 * 业务交易号（财务对账使用）
+	 */
+	private String tradeno;
+
+	/**
+	 * 代收订单 0、普通正向 1、退货订单 2 
+	 */
+	private String type;
 
 	/**
 	 * @return the 发货人信息
@@ -37,12 +142,6 @@ public class Requestorder extends BasePojo
 	}
 
 	/**
-	 * 收件人信息
-	 */
-	@Transient
-	public Receiver receiver;
-
-	/**
 	 * @return the 收件人信息
 	 */
 	public Receiver getReceiver()
@@ -57,12 +156,6 @@ public class Requestorder extends BasePojo
 	{
 		this.receiver = receiver;
 	}
-
-	/**
-	 * 商品信息
-	 */
-	@Transient
-	private Item item;
 
 	/**
 	 * @return the 商品信息
@@ -81,89 +174,7 @@ public class Requestorder extends BasePojo
 	}
 
 	/**
-	 * 用户id
-	 */
-	private Long uid;
-
-	/**
-	 * 代收金额（代收订单时，金额必须>0）
-	 */
-	private String codamount;
-
-	/**
-	 * 数据标识(用于分仓发货,C2C 类客户省略) 
-	 */
-	private String dataflag;
-
-	/**
-	 * 订单标识
-	 */
-	private String flag;
-
-	/**
-	 * 保险费(暂丌使用)
-	 */
-	private String insurancevalue;
-
-	/**
-	 * 商品总品名：品名*数量|…|品名*数量 
-	 */
-	private String itemsname;
-
-	/**
-	 * 商品总数量。根据您的发货单位统计数量
-	 */
-	private String itemsnumber;
-
-	/**
-	 * 商品尺寸：长*宽*高*件数,
-	 */
-	private String itemsvolume;
-
-	/**
-	 * 总重量（KG 精度.00） 
-	 */
-	private String itemsweight;
-
-	/**
-	 * 客户标识(宅急送提供)
-	 */
-	private String logisticproviderid;
-
-	/**
-	 * 快递单号(宅急送物流单号) 
-	 */
-	private String mailno;
-
-	/**
-	 * 客户单号（物流订单号）
-	 */
-	private String orderno;
-
-	/**
-	 * 重要提示
-	 */
-	private String remark;
-
-	/**
-	 * 物流子订单号，多个子订单号逗号隔开
-	 */
-	private String suborderno;
-
-	/**
-	 * 业务交易号（财务对账使用）
-	 */
-	private String tradeno;
-
-	/**
-	 * 代收订单 0、普通正向 1、退货订单 2 
-	 */
-	private String type;
-
-	/**
-	 * 获取id
-	 *
-	 * @return id - id
+	 * @return the id
 	 */
 	public Long getId()
 	{
@@ -171,9 +182,7 @@ public class Requestorder extends BasePojo
 	}
 
 	/**
-	 * 设置id
-	 *
-	 * @param id id
+	 * @param id the id to set
 	 */
 	public void setId(Long id)
 	{
@@ -181,9 +190,7 @@ public class Requestorder extends BasePojo
 	}
 
 	/**
-	 * 获取用户id
-	 *
-	 * @return uid - 用户id
+	 * @return the 用户id
 	 */
 	public Long getUid()
 	{
@@ -191,9 +198,7 @@ public class Requestorder extends BasePojo
 	}
 
 	/**
-	 * 设置用户id
-	 *
-	 * @param uid 用户id
+	 * @param 用户id the uid to set
 	 */
 	public void setUid(Long uid)
 	{
@@ -201,49 +206,39 @@ public class Requestorder extends BasePojo
 	}
 
 	/**
-	 * 获取代收金额（代收订单时，金额必须>0）
-	 *
-	 * @return codamount - 代收金额（代收订单时，金额必须>0）
+	 * @return the 代收金额（代收订单时，金额必须>0）
 	 */
-	public String getCodamount()
+	public String getCodAmount()
 	{
-		return codamount;
+		return codAmount;
 	}
 
 	/**
-	 * 设置代收金额（代收订单时，金额必须>0）
-	 *
-	 * @param codamount 代收金额（代收订单时，金额必须>0）
+	 * @param 代收金额（代收订单时，金额必须>0） the codAmount to set
 	 */
-	public void setCodamount(String codamount)
+	public void setCodAmount(String codAmount)
 	{
-		this.codamount = codamount == null ? null : codamount.trim();
+		this.codAmount = codAmount;
 	}
 
 	/**
-	 * 获取数据标识(用于分仓发货,C2C 类客户省略) 
-	 *
-	 * @return dataflag - 数据标识(用于分仓发货,C2C 类客户省略) 
+	 * @return the 数据标识(用于分仓发货C2C类客户省略)
 	 */
-	public String getDataflag()
+	public String getDataFlag()
 	{
-		return dataflag;
+		return dataFlag;
 	}
 
 	/**
-	 * 设置数据标识(用于分仓发货,C2C 类客户省略) 
-	 *
-	 * @param dataflag 数据标识(用于分仓发货,C2C 类客户省略) 
+	 * @param 数据标识(用于分仓发货C2C类客户省略) the dataFlag to set
 	 */
-	public void setDataflag(String dataflag)
+	public void setDataFlag(String dataFlag)
 	{
-		this.dataflag = dataflag == null ? null : dataflag.trim();
+		this.dataFlag = dataFlag;
 	}
 
 	/**
-	 * 获取订单标识
-	 *
-	 * @return flag - 订单标识
+	 * @return the 订单标识
 	 */
 	public String getFlag()
 	{
@@ -251,179 +246,143 @@ public class Requestorder extends BasePojo
 	}
 
 	/**
-	 * 设置订单标识
-	 *
-	 * @param flag 订单标识
+	 * @param 订单标识 the flag to set
 	 */
 	public void setFlag(String flag)
 	{
-		this.flag = flag == null ? null : flag.trim();
+		this.flag = flag;
 	}
 
 	/**
-	 * 获取保险费(暂丌使用)
-	 *
-	 * @return insurancevalue - 保险费(暂丌使用)
+	 * @return the 保险费(暂丌使用)
 	 */
-	public String getInsurancevalue()
+	public String getInsuranceValue()
 	{
-		return insurancevalue;
+		return insuranceValue;
 	}
 
 	/**
-	 * 设置保险费(暂丌使用)
-	 *
-	 * @param insurancevalue 保险费(暂丌使用)
+	 * @param 保险费(暂丌使用) the insuranceValue to set
 	 */
-	public void setInsurancevalue(String insurancevalue)
+	public void setInsuranceValue(String insuranceValue)
 	{
-		this.insurancevalue = insurancevalue == null ? null : insurancevalue.trim();
+		this.insuranceValue = insuranceValue;
 	}
 
 	/**
-	 * 获取商品总品名：品名*数量|…|品名*数量 
-	 *
-	 * @return itemsname - 商品总品名：品名*数量|…|品名*数量 
+	 * @return the 商品总品名：品名数量|…|品名数量
 	 */
-	public String getItemsname()
+	public String getItemsName()
 	{
-		return itemsname;
+		return itemsName;
 	}
 
 	/**
-	 * 设置商品总品名：品名*数量|…|品名*数量 
-	 *
-	 * @param itemsname 商品总品名：品名*数量|…|品名*数量 
+	 * @param 商品总品名：品名数量|…|品名数量 the itemsName to set
 	 */
-	public void setItemsname(String itemsname)
+	public void setItemsName(String itemsName)
 	{
-		this.itemsname = itemsname == null ? null : itemsname.trim();
+		this.itemsName = itemsName;
 	}
 
 	/**
-	 * 获取商品总数量。根据您的发货单位统计数量
-	 *
-	 * @return itemsnumber - 商品总数量。根据您的发货单位统计数量
+	 * @return the 商品总数量。根据您的发货单位统计数量
 	 */
-	public String getItemsnumber()
+	public String getItemsNumber()
 	{
-		return itemsnumber;
+		return itemsNumber;
 	}
 
 	/**
-	 * 设置商品总数量。根据您的发货单位统计数量
-	 *
-	 * @param itemsnumber 商品总数量。根据您的发货单位统计数量
+	 * @param 商品总数量。根据您的发货单位统计数量 the itemsNumber to set
 	 */
-	public void setItemsnumber(String itemsnumber)
+	public void setItemsNumber(String itemsNumber)
 	{
-		this.itemsnumber = itemsnumber == null ? null : itemsnumber.trim();
+		this.itemsNumber = itemsNumber;
 	}
 
 	/**
-	 * 获取商品尺寸：长*宽*高*件数,
-	 *
-	 * @return itemsvolume - 商品尺寸：长*宽*高*件数,
+	 * @return the 商品尺寸：长宽高件数
 	 */
-	public String getItemsvolume()
+	public String getItemsVolume()
 	{
-		return itemsvolume;
+		return itemsVolume;
 	}
 
 	/**
-	 * 设置商品尺寸：长*宽*高*件数,
-	 *
-	 * @param itemsvolume 商品尺寸：长*宽*高*件数,
+	 * @param 商品尺寸：长宽高件数 the itemsVolume to set
 	 */
-	public void setItemsvolume(String itemsvolume)
+	public void setItemsVolume(String itemsVolume)
 	{
-		this.itemsvolume = itemsvolume == null ? null : itemsvolume.trim();
+		this.itemsVolume = itemsVolume;
 	}
 
 	/**
-	 * 获取总重量（KG 精度.00） 
-	 *
-	 * @return itemsweight - 总重量（KG 精度.00） 
+	 * @return the 总重量（KG精度.00）
 	 */
-	public String getItemsweight()
+	public String getItemsWeight()
 	{
-		return itemsweight;
+		return itemsWeight;
 	}
 
 	/**
-	 * 设置总重量（KG 精度.00） 
-	 *
-	 * @param itemsweight 总重量（KG 精度.00） 
+	 * @param 总重量（KG精度.00） the itemsWeight to set
 	 */
-	public void setItemsweight(String itemsweight)
+	public void setItemsWeight(String itemsWeight)
 	{
-		this.itemsweight = itemsweight == null ? null : itemsweight.trim();
+		this.itemsWeight = itemsWeight;
 	}
 
 	/**
-	 * 获取客户标识(宅急送提供)
-	 *
-	 * @return logisticproviderid - 客户标识(宅急送提供)
+	 * @return the 客户标识(宅急送提供)
 	 */
-	public String getLogisticproviderid()
+	public String getLogisticProviderID()
 	{
-		return logisticproviderid;
+		return logisticProviderID;
 	}
 
 	/**
-	 * 设置客户标识(宅急送提供)
-	 *
-	 * @param logisticproviderid 客户标识(宅急送提供)
+	 * @param 客户标识(宅急送提供) the logisticProviderID to set
 	 */
-	public void setLogisticproviderid(String logisticproviderid)
+	public void setLogisticProviderID(String logisticProviderID)
 	{
-		this.logisticproviderid = logisticproviderid == null ? null : logisticproviderid.trim();
+		this.logisticProviderID = logisticProviderID;
 	}
 
 	/**
-	 * 获取快递单号(宅急送物流单号) 
-	 *
-	 * @return mailno - 快递单号(宅急送物流单号) 
+	 * @return the 快递单号(宅急送物流单号)
 	 */
-	public String getMailno()
+	public String getMailNo()
 	{
-		return mailno;
+		return mailNo;
 	}
 
 	/**
-	 * 设置快递单号(宅急送物流单号) 
-	 *
-	 * @param mailno 快递单号(宅急送物流单号) 
+	 * @param 快递单号(宅急送物流单号) the mailNo to set
 	 */
-	public void setMailno(String mailno)
+	public void setMailNo(String mailNo)
 	{
-		this.mailno = mailno == null ? null : mailno.trim();
+		this.mailNo = mailNo;
 	}
 
 	/**
-	 * 获取客户单号（物流订单号）
-	 *
-	 * @return orderno - 客户单号（物流订单号）
+	 * @return the 客户单号（物流订单号）
 	 */
-	public String getOrderno()
+	public String getOrderNo()
 	{
-		return orderno;
+		return orderNo;
 	}
 
 	/**
-	 * 设置客户单号（物流订单号）
-	 *
-	 * @param orderno 客户单号（物流订单号）
+	 * @param 客户单号（物流订单号） the orderNo to set
 	 */
-	public void setOrderno(String orderno)
+	public void setOrderNo(String orderNo)
 	{
-		this.orderno = orderno == null ? null : orderno.trim();
+		this.orderNo = orderNo;
 	}
 
 	/**
-	 * 获取重要提示
-	 *
-	 * @return remark - 重要提示
+	 * @return the 重要提示
 	 */
 	public String getRemark()
 	{
@@ -431,39 +390,31 @@ public class Requestorder extends BasePojo
 	}
 
 	/**
-	 * 设置重要提示
-	 *
-	 * @param remark 重要提示
+	 * @param 重要提示 the remark to set
 	 */
 	public void setRemark(String remark)
 	{
-		this.remark = remark == null ? null : remark.trim();
+		this.remark = remark;
 	}
 
 	/**
-	 * 获取物流子订单号，多个子订单号逗号隔开
-	 *
-	 * @return suborderno - 物流子订单号，多个子订单号逗号隔开
+	 * @return the 物流子订单号，多个子订单号逗号隔开
 	 */
-	public String getSuborderno()
+	public String getSubOrderNo()
 	{
-		return suborderno;
+		return subOrderNo;
 	}
 
 	/**
-	 * 设置物流子订单号，多个子订单号逗号隔开
-	 *
-	 * @param suborderno 物流子订单号，多个子订单号逗号隔开
+	 * @param 物流子订单号，多个子订单号逗号隔开 the subOrderNo to set
 	 */
-	public void setSuborderno(String suborderno)
+	public void setSubOrderNo(String subOrderNo)
 	{
-		this.suborderno = suborderno == null ? null : suborderno.trim();
+		this.subOrderNo = subOrderNo;
 	}
 
 	/**
-	 * 获取业务交易号（财务对账使用）
-	 *
-	 * @return tradeno - 业务交易号（财务对账使用）
+	 * @return the 业务交易号（财务对账使用）
 	 */
 	public String getTradeno()
 	{
@@ -471,19 +422,15 @@ public class Requestorder extends BasePojo
 	}
 
 	/**
-	 * 设置业务交易号（财务对账使用）
-	 *
-	 * @param tradeno 业务交易号（财务对账使用）
+	 * @param 业务交易号（财务对账使用） the tradeno to set
 	 */
 	public void setTradeno(String tradeno)
 	{
-		this.tradeno = tradeno == null ? null : tradeno.trim();
+		this.tradeno = tradeno;
 	}
 
 	/**
-	 * 获取代收订单 0、普通正向 1、退货订单 2 
-	 *
-	 * @return type - 代收订单 0、普通正向 1、退货订单 2 
+	 * @return the 代收订单0、普通正向1、退货订单2
 	 */
 	public String getType()
 	{
@@ -491,12 +438,11 @@ public class Requestorder extends BasePojo
 	}
 
 	/**
-	 * 设置代收订单 0、普通正向 1、退货订单 2 
-	 *
-	 * @param type 代收订单 0、普通正向 1、退货订单 2 
+	 * @param 代收订单0、普通正向1、退货订单2 the type to set
 	 */
 	public void setType(String type)
 	{
-		this.type = type == null ? null : type.trim();
+		this.type = type;
 	}
+
 }

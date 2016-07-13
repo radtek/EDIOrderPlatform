@@ -1,9 +1,17 @@
 package com.edi.manage.pojo;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+* <p>Title: Sender </p>
+* <p>@Description: 发货人信息类 </p>
+* <p>Company:  </p>
+* @author 李文
+* @date   2016年7月13日 下午3:09:13 
+*/
 public class Sender extends BasePojo
 {
 	/**
@@ -51,7 +59,8 @@ public class Sender extends BasePojo
 	/**
 	 * 寄件人或收件人邮编
 	 */
-	private String postcode;
+	@Column(name = "postCode")
+	private String postCode;
 
 	/**
 	 * 寄件或收件省（北京市、湖北省）
@@ -219,26 +228,6 @@ public class Sender extends BasePojo
 	}
 
 	/**
-	 * 获取寄件人或收件人邮编
-	 *
-	 * @return postcode - 寄件人或收件人邮编
-	 */
-	public String getPostcode()
-	{
-		return postcode;
-	}
-
-	/**
-	 * 设置寄件人或收件人邮编
-	 *
-	 * @param postcode 寄件人或收件人邮编
-	 */
-	public void setPostcode(String postcode)
-	{
-		this.postcode = postcode == null ? null : postcode.trim();
-	}
-
-	/**
 	 * 获取寄件或收件省（北京市、湖北省）
 	 *
 	 * @return prov - 寄件或收件省（北京市、湖北省）
@@ -257,4 +246,21 @@ public class Sender extends BasePojo
 	{
 		this.prov = prov == null ? null : prov.trim();
 	}
+
+	/**
+	 * @return the 寄件人或收件人邮编
+	 */
+	public String getPostCode()
+	{
+		return postCode;
+	}
+
+	/**
+	 * @param 寄件人或收件人邮编 the postCode to set
+	 */
+	public void setPostCode(String postCode)
+	{
+		this.postCode = postCode;
+	}
+
 }
