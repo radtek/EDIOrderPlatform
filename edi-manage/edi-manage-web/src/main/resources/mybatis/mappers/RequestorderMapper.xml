@@ -5,23 +5,24 @@
 		<!-- WARNING - @mbggenerated -->
 		<id column="id" property="id" jdbcType="BIGINT" />
 		<result column="uid" property="uid" jdbcType="BIGINT" />
-		<result column="codamount" property="codamount" jdbcType="VARCHAR" />
-		<result column="dataflag" property="dataflag" jdbcType="VARCHAR" />
+		<result column="codAmount" property="codAmount" jdbcType="VARCHAR" />
+		<result column="dataFlag" property="dataFlag" jdbcType="VARCHAR" />
 		<result column="flag" property="flag" jdbcType="VARCHAR" />
-		<result column="insurancevalue" property="insurancevalue"
+		<result column="insuranceValue" property="insuranceValue"
 			jdbcType="VARCHAR" />
-		<result column="itemsname" property="itemsname" jdbcType="VARCHAR" />
-		<result column="itemsnumber" property="itemsnumber" jdbcType="VARCHAR" />
-		<result column="itemsvolume" property="itemsvolume" jdbcType="VARCHAR" />
-		<result column="itemsweight" property="itemsweight" jdbcType="VARCHAR" />
-		<result column="logisticproviderid" property="logisticproviderid"
+		<result column="itemsName" property="itemsName" jdbcType="VARCHAR" />
+		<result column="itemsNumber" property="itemsNumber" jdbcType="VARCHAR" />
+		<result column="itemsVolume" property="itemsVolume" jdbcType="VARCHAR" />
+		<result column="itemsWeight" property="itemsWeight" jdbcType="VARCHAR" />
+		<result column="logisticProviderID" property="logisticProviderID"
 			jdbcType="VARCHAR" />
-		<result column="mailno" property="mailno" jdbcType="VARCHAR" />
-		<result column="orderno" property="orderno" jdbcType="VARCHAR" />
+		<result column="mailNo" property="mailNo" jdbcType="VARCHAR" />
+		<result column="orderNo" property="orderNo" jdbcType="VARCHAR" />
 		<result column="remark" property="remark" jdbcType="VARCHAR" />
-		<result column="suborderno" property="suborderno" jdbcType="VARCHAR" />
+		<result column="subOrderNo" property="subOrderNo" jdbcType="VARCHAR" />
 		<result column="tradeno" property="tradeno" jdbcType="VARCHAR" />
 		<result column="type" property="type" jdbcType="VARCHAR" />
+ 
 
 		<association property="item" javaType="com.edi.manage.pojo.Item"
 			column="uid" select="com.edi.manage.mapper.ItemMapper.querybyuid"></association>

@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.edi.manage.mapper.SenderMapper">
 	<resultMap id="BaseResultMap" type="com.edi.manage.pojo.Sender">
-		<!-- WARNING - @mbggenerated -->
 		<id column="id" property="id" jdbcType="BIGINT" />
 		<result column="uid" property="uid" jdbcType="BIGINT" />
 		<result column="address" property="address" jdbcType="VARCHAR" />
@@ -11,8 +10,9 @@
 		<result column="mobile" property="mobile" jdbcType="VARCHAR" />
 		<result column="name" property="name" jdbcType="VARCHAR" />
 		<result column="phone" property="phone" jdbcType="VARCHAR" />
-		<result column="postcode" property="postcode" jdbcType="VARCHAR" />
+		<result column="postCode" property="postCode" jdbcType="VARCHAR" />
 		<result column="prov" property="prov" jdbcType="VARCHAR" />
+ 
 	</resultMap>
 
 	<select id="queryById" resultType="com.edi.manage.pojo.Sender"
