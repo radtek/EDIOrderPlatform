@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head>
-
-    <title>新增一个EdiUser</title>
-
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<head> 
+    <title>新增一个EdiUser</title> 
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
@@ -14,10 +13,10 @@
     <script src="css/toastr.js"></script>
     <link href="css/toastr.min.css" rel="stylesheet" />
     <script src="js/bootstrapValidator.min.js"></script>
-    <link href="css/bootstrapValidator.min.css" rel="stylesheet" /> 
+    <link href="css/bootstrapValidator.min.css" rel="stylesheet" />
 </head>
 
-
+ 
 
 <body>
 
@@ -60,9 +59,9 @@
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="dataflag">EID 分仓标识</label>
+                <label class="col-sm-2 control-label" for="dataFlag">EID 分仓标识</label>
                 <div class="col-sm-4">
-                    <input class="form-control" id="dataflag" name="dataflag" type="text" placeholder="EID 分仓标识" />
+                    <input class="form-control" id="dataFlag" name="dataFlag" type="text" placeholder="EID 分仓标识" />
                 </div>
             </div>
             <div class="form-group">
@@ -80,16 +79,16 @@
         <fieldset>
             <legend>requestorders</legend>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="requestorders[0].codamount">代收金额</label>
+                <label class="col-sm-2 control-label" for="requestorders[0].codAmount">代收金额</label>
                 <div class="col-sm-4">
-                    <input class="form-control" id="requestorders[0].codamount" type="text" name="requestorders[0].codamount" placeholder="代收金额"/>
+                    <input class="form-control" id="requestorders[0].codAmount" type="text" name="requestorders[0].codAmount" placeholder="代收金额"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="requestorders[0].dataflag">数据标识(用于分仓发货,C2C 类客户省略)</label>
+                <label class="col-sm-2 control-label" for="requestorders[0].dataFlag">数据标识(用于分仓发货,C2C 类客户省略)</label>
                 <div class="col-sm-4">
-                    <input class="form-control" id="requestorders[0].dataflag" type="text" name="requestorders[0].dataflag" placeholder="数据标识"/>
+                    <input class="form-control" id="requestorders[0].dataFlag" type="text" name="requestorders[0].dataFlag" placeholder="数据标识"/>
                 </div>
             </div>
              <div class="form-group">
@@ -99,49 +98,49 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="requestorders[0].itemsname">商品总品名：品名</label>
+                <label class="col-sm-2 control-label" for="requestorders[0].itemsName">商品总品名：品名</label>
                 <div class="col-sm-4">
-                    <input class="form-control" id="requestorders[0].itemsname" type="text" name="requestorders[0].itemsname" placeholder="商品总品名：品名"/>
+                    <input class="form-control" id="requestorders[0].itemsName" type="text" name="requestorders[0].itemsName" placeholder="商品总品名：品名"/>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="requestorders[0].itemsnumber">商品总数量</label>
+                <label class="col-sm-2 control-label" for="requestorders[0].itemsNumber">商品总数量</label>
                 <div class="col-sm-4">
-                    <input class="form-control" id="requestorders[0].itemsnumber" type="text" name="requestorders[0].itemsnumber" placeholder="商品总数量"/>
+                    <input class="form-control" id="requestorders[0].itemsNumber" type="text" name="requestorders[0].itemsNumber" placeholder="商品总数量"/>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="requestorders[0].itemsvolume">商品尺寸：长*宽*高</label>
+                <label class="col-sm-2 control-label" for="requestorders[0].itemsVolume">商品尺寸：长*宽*高</label>
                 <div class="col-sm-4">
-                    <input class="form-control" id="requestorders[0].itemsvolume" type="text" name="requestorders[0].itemsvolume" placeholder="商品尺寸"/>
+                    <input class="form-control" id="requestorders[0].itemsVolume" type="text" name="requestorders[0].itemsVolume" placeholder="商品尺寸"/>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="requestorders[0].itemsweight">总重量（KG 精度.00）</label>
+                <label class="col-sm-2 control-label" for="requestorders[0].itemsWeight">总重量（KG 精度.00）</label>
                 <div class="col-sm-4">
-                    <input class="form-control" id="requestorders[0].itemsweight" type="text" name="requestorders[0].itemsweight" placeholder="总重量"/>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="requestorders[0].logisticproviderid">客户标识(宅急送提供)</label>
-                <div class="col-sm-4">
-                    <input class="form-control" id="requestorders[0].logisticproviderid" type="text" name="requestorders[0].logisticproviderid" placeholder="客户标识"/>
+                    <input class="form-control" id="requestorders[0].itemsWeight" type="text" name="requestorders[0].itemsWeight" placeholder="总重量"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="requestorders[0].mailno">客户标识(宅急送提供)</label>
+                <label class="col-sm-2 control-label" for="requestorders[0].logisticProviderID">客户标识(宅急送提供)</label>
                 <div class="col-sm-4">
-                    <input class="form-control" id="requestorders[0].mailno" type="text" name="requestorders[0].mailno" placeholder="客户标识"/>
+                    <input class="form-control" id="requestorders[0].logisticProviderID" type="text" name="requestorders[0].logisticProviderID" placeholder="客户标识"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="requestorders[0].mailNo">客户标识(宅急送提供)</label>
+                <div class="col-sm-4">
+                    <input class="form-control" id="requestorders[0].mailNo" type="text" name="requestorders[0].mailNo" placeholder="客户标识"/>
                 </div>
             </div>
 
 
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="requestorders[0].orderno">客户单号（物流订单号）</label>
+                <label class="col-sm-2 control-label" for="requestorders[0].orderNo">客户单号（物流订单号）</label>
                 <div class="col-sm-4">
-                    <input class="form-control" id="requestorders[0].orderno" type="text" name="requestorders[0].orderno" placeholder="客户单号"/>
+                    <input class="form-control" id="requestorders[0].orderNo" type="text" name="requestorders[0].orderNo" placeholder="客户单号"/>
                 </div>
             </div> 
             <div class="form-group">
@@ -201,9 +200,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="requestorders[0].sender.postcode">寄件人邮编</label>
+                <label class="col-sm-2 control-label" for="requestorders[0].sender.postCode">寄件人邮编</label> 
                 <div class="col-sm-4">
-                    <input class="form-control" id="requestorders[0].sender.postcode" type="text" name="requestorders[0].sender.postcode" placeholder="寄件人人邮编"/>
+                    <input class="form-control" id="requestorders[0].sender.postCode" type="text" name="requestorders[0].sender.postCode" placeholder="寄件人人邮编"/>
                 </div>
             </div>
 
@@ -257,9 +256,9 @@
                 </div>
             </div> 
              <div class="form-group">
-                <label class="col-sm-2 control-label" for="requestorders[0].receiver.postcode">收件人邮编</label>
+                <label class="col-sm-2 control-label" for="requestorders[0].receiver.postCode">收件人邮编</label>
                 <div class="col-sm-4">
-                    <input class="form-control" id="requestorders[0].receiver.postcode" type="text" name="requestorders[0].receiver.postcode" placeholder="收件人人邮编"/>
+                    <input class="form-control" id="requestorders[0].receiver.postCode" type="text" name="requestorders[0].receiver.postCode" placeholder="收件人人邮编"/>
                 </div>
             </div>
 
@@ -327,7 +326,7 @@
                     }
                 }
             },
-            dataflag: {
+            dataFlag: {
                 validators: {
                     notEmpty: {
                         message: '不能为空'
