@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
 * <p>Title: Item </p>
 * <p>@Description: 商品信息类 </p>
@@ -19,11 +21,13 @@ public class Item extends BasePojo
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonIgnore
 	private Long id;
 
 	/**
 	 * 用户id
 	 */
+	@JsonIgnore
 	private Long uid;
 
 	/**

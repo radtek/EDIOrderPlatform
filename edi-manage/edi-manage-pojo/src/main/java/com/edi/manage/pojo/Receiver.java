@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
 * <p>Title: Receiver </p>
 * <p>@Description: 收货人地址类 </p>
@@ -19,6 +21,7 @@ public class Receiver extends BasePojo
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonIgnore
 	private Long id;
 
 	/**
@@ -65,6 +68,7 @@ public class Receiver extends BasePojo
 	/**
 	 * 用户ID
 	 */
+	@JsonIgnore
 	private Long uid;
 
 	/**

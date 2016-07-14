@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Requestorder extends BasePojo
 {
 
@@ -32,11 +34,13 @@ public class Requestorder extends BasePojo
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonIgnore
 	private Long id;
 
 	/**
 	 * 用户id
 	 */
+	@JsonIgnore
 	private Long uid;
 
 	/**
@@ -60,6 +64,7 @@ public class Requestorder extends BasePojo
 	 * 保险费(暂丌使用)
 	 */
 	@Column(name = "insuranceValue")
+	@JsonIgnore
 	private String insuranceValue;
 
 	/**
@@ -118,6 +123,7 @@ public class Requestorder extends BasePojo
 	/**
 	 * 业务交易号（财务对账使用）
 	 */
+	@JsonIgnore
 	private String tradeno;
 
 	/**

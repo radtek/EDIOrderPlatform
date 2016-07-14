@@ -4,18 +4,22 @@ import java.util.Date;
 
 import javax.persistence.Column;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class BasePojo
 {
 	/**
 	 * 更新时间
 	 */
 	@Column(name = "UpdateTime")
+	@JsonIgnore
 	private Date updatetime;
 
 	/**
 	 * 创建时间
 	 */
 	@Column(name = "RecordTime")
+	@JsonIgnore
 	private Date recordtime;
 
 	/**  

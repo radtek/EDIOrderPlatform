@@ -19,15 +19,20 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-		<dependency> 
+		<dependency>
 			<groupId>com.edi.commcn</groupId>
 			<artifactId>edi-commcn</artifactId>
-			<version>0.0.1-SNAPSHOT</version> 
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
-		 
-		
-		
+
+
+		<dependency>
+			<groupId>com.zjs.edi.commcn-dom4jedi</groupId>
+			<artifactId>edi-commcn-dom4jedi</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper</artifactId>
@@ -94,7 +99,11 @@
 			<artifactId>commons-lang</artifactId>
 		</dependency>
 
-
+		<!--Jackson xml 处理工具包 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
 
 	</dependencies>
 	<build>
