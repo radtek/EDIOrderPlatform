@@ -2,7 +2,7 @@ package com.edi.web.service;
 
 import org.springframework.stereotype.Service;
 
-import com.edi.web.bean.EdiUser;
+import com.edi.manage.pojo.EdiUser;
 import com.edi.web.service.base.BaseService;
 
 @Service

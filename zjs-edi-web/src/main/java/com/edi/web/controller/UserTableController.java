@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.edi.commcn.httpclientapi.bean.HttpResult;
-import com.edi.web.bean.EdiUser;
+import com.edi.manage.pojo.EdiUser;
 import com.edi.web.controller.base.BaseController;
 import com.edi.web.service.EdiUserService;
 

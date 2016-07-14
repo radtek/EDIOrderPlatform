@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.edi.commcn.httpclientapi.bean.HttpResult;
-import com.edi.web.bean.EdiUser;
+import com.edi.manage.pojo.EdiUser;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 @Service
