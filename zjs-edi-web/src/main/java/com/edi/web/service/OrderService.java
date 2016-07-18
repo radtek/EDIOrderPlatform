@@ -103,7 +103,7 @@ public class OrderService
 			// TODO 当前缺少 redis 缓存层 key:ip val:userXML 先找缓存 找不到缓存 在 后台获取
 			EdiUser edi = new EdiUser();
 			edi.setIp(ip);
-			List<EdiUser> ediList = ediService.queryListByWhere(edi);
+			List<EdiUser> ediList = ediService.queryIp(edi);
 			if (ediList == null || ediList.size() == 0)
 			{
 				result.setCode(404);

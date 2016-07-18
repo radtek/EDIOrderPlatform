@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 
 import com.edi.commcn.edi.bean.EasyUIResult;
 import com.edi.commcn.httpclientapi.bean.HttpResult;
-import com.edi.web.bean.EdiUser;
+import com.edi.manage.pojo.EdiUser;
 import com.edi.web.controller.UserTableController;
 
 public class WebTest
@@ -24,11 +24,10 @@ public class WebTest
 		context.load("classpath:spring/applicationContext*.xml");
 		context.refresh();
 		user = context.getBean(UserTableController.class);
-
 	}
 
  *//**
-* ID 查询
+* 
 */
 /*
 @Test
@@ -44,6 +43,7 @@ System.out.println(ediUser.getName());
 * ID  条件查询
 */
 /*
+
 @Test
 public void Test_queryMByClass()
 {
@@ -65,6 +65,7 @@ public void Test_queryMList()
 ResponseEntity<List<EdiUser>> userEntity = user.queryMList();
 List<EdiUser> list = userEntity.getBody();
 System.out.println(list.size());
+
 }
 
  *//**

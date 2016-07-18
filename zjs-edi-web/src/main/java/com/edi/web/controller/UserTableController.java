@@ -5,9 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.edi.commcn.httpclientapi.bean.HttpResult;
@@ -16,8 +16,7 @@ import com.edi.web.controller.base.BaseController;
 import com.edi.web.service.EdiUserService;
 
 @RestController
-@RequestMapping("table")
-@CrossOrigin
+@RequestMapping(value = "table", produces = "application/json;charset=utf-8")
 public class UserTableController extends BaseController<EdiUser>
 {
 	@Autowired
@@ -28,6 +27,7 @@ public class UserTableController extends BaseController<EdiUser>
 	 * @param TbContentCategory
 	 * @return
 	 */
+	@ResponseBody
 	@RequestMapping(value = "request", method = RequestMethod.POST)
 	public ResponseEntity<HttpResult> saveContentCategory(HttpServletRequest request)
 	{
