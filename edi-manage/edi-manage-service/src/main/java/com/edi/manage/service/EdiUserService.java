@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.edi.manage.mapper.EdiUserMapper;
 import com.edi.manage.pojo.EdiUser;
-import com.edi.manage.pojo.Item;
 import com.edi.manage.pojo.Receiver;
 import com.edi.manage.pojo.Requestorder;
 import com.edi.manage.pojo.Sender;
@@ -31,14 +30,19 @@ public class EdiUserService extends BaseService<EdiUser>
 	@Autowired
 	private SenderService senderService;
 
-	public EdiUser queryByID(String id)
-	{
-		return mapper.queryByID(id);
-	}
-
 	public List<EdiUser> querByList()
 	{
 		return mapper.querByList();
+	}
+
+	public List<EdiUser> querById(Long id)
+	{
+		return mapper.querById(id);
+	}
+
+	public List<EdiUser> querByIp(String ip)
+	{
+		return mapper.querByIp(ip);
 	}
 
 	public void saveEdiUsers(EdiUser e)
@@ -54,11 +58,12 @@ public class EdiUserService extends BaseService<EdiUser>
 				requestorder.setUid(e.getId());
 				requestorderService.saveSelective(requestorder);
 
-				/*Item item = requestorder.getItem();
-				System.out.println(requestorder.getUid());
-				item.setUid(requestorder.getUid());
-				itemService.saveSelective(item);
-*/
+				/*
+				 * Item item = requestorder.getItem();
+				 * System.out.println(requestorder.getUid());
+				 * item.setUid(requestorder.getUid());
+				 * itemService.saveSelective(item);
+				 */
 				Receiver re = requestorder.getReceiver();
 				re.setUid(requestorder.getUid());
 				receiverService.saveSelective(re);

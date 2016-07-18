@@ -30,6 +30,14 @@ public class UserTest
 	}
 
 	@Test
+	public void Test_2()
+	{
+		List<EdiUser> u = edi.querById(7L);
+
+		System.out.println(u);
+	}
+
+	@Test
 	public void Test_ById() throws Exception
 	{
 		XmlMapper xmlMapper = new XmlMapper();

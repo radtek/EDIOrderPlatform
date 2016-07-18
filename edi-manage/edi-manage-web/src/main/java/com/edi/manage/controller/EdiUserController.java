@@ -1,10 +1,14 @@
 package com.edi.manage.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.edi.manage.controller.base.BaseController;
@@ -12,7 +16,7 @@ import com.edi.manage.pojo.EdiUser;
 import com.edi.manage.service.EdiUserService;
 
 @RestController
-@RequestMapping("eiduser")
+@RequestMapping(value = "eiduser", produces = "application/json;charset=utf-8")
 public class EdiUserController extends BaseController<EdiUserService, EdiUser>
 {
 
@@ -41,4 +45,40 @@ public class EdiUserController extends BaseController<EdiUserService, EdiUser>
 
 	}
 
+	/**
+	 * 通过 ID 查询用户
+	 * @return
+	 */
+	@Override
+	@RequestMapping(value = "{id}", method = RequestMethod.GET)
+	public ResponseEntity<EdiUser> queryMByid(@PathVariable("id") Long id)
+	{
+
+		try
+		{
+			List<EdiUser> m = ediUserService.querById(id);
+			return ResponseEntity.ok(m.get(0));
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+		}
+	}
+
+	@RequestMapping(value = "queryIp", method = RequestMethod.POST, produces = "application/xml")
+	public ResponseEntity<EdiUser> queryIp(@RequestParam("ip") String ip)
+	{
+
+		try
+		{
+			List<EdiUser> m = ediUserService.querByIp(ip);
+			return ResponseEntity.ok(m.get(0));
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+		}
+	}
 }

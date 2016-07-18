@@ -22,5 +22,12 @@
 		select * FROM edi_user
 	</select>
 
+	 <select id="querByIp" parameterType="String"  resultMap="BaseResultMap">
+		select * FROM edi_user  where ip like  '%'||#{ip}||'%'
+	</select>
+
+	<select id="querById" parameterType="Long"  resultMap="BaseResultMap">
+		select * FROM edi_user where id =#{id}
+	</select>
 
 </mapper>

@@ -37,7 +37,9 @@ public class BaseController<T extends BaseService, M extends BasePojo>
 	{
 		try
 		{
-			return ResponseEntity.ok((M) MService.queryByID(id));
+			M m = (M) MService.queryByID(id);
+
+			return ResponseEntity.ok(m);
 		}
 		catch (Exception e)
 		{
